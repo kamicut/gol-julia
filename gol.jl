@@ -3,19 +3,19 @@ using Cairo
 using Tk
 using Images
 
-function runGol(size::Int, iter::Int)
+function simulate(size::Int, iter::Int, sparse::Float64=0.1)
     win = Toplevel("Test", size, size)
     c = Canvas(win)
     pack(c, expand=true, fill="both")
     ctx = getgc(c)
 
     function evolve(grid)
-        neighbors = imfilter(grid, [1 1 1; 1 10 1; 1 1 1]);
-        ((neighbors .== 12) | (neighbors .==13) | (neighbors .==3)) & 1
+        neighbors = imfilter(grid, [1 1 1; 1 9 1; 1 1 1]);
+        ((neighbors .== 11) | (neighbors .==12) | (neighbors .==3)) & 1
     end
 
-    function iterate(N::Int, iter::Int)
-        grid = (rand(N,N) .< 0.1) & 1;
+    function iterate(N::Int, iter::Int, sparse::Float64)
+        grid = (rand(N,N) .< sparse) & 1;
         for i=1:iter
             grid = evolve(grid)
             buf = uint32color(grid .* 255)
@@ -24,5 +24,6 @@ function runGol(size::Int, iter::Int)
             Tk.update();
         end
     end
-    iterate(size, iter);
+
+    iterate(size, iter,sparse);
 end
