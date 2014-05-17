@@ -1,6 +1,13 @@
 ## Motivation
 This is a simple implementation of Conway's game of life in Julia. I wanted to experiment with Tk, Cairo and Image filters. 
 
+##Usage
+Import the file into the REPL and call
+```
+simulate(size::Int, iterations::Int, sparsity::Float = 0.1)
+```
+Where size creates a size*size game of life board, iterations is the number of steps and sparsity is an optional parameter between 0 and 1 that indicates how populated the initial board is. 
+
 ## Implementation
 The implementation is straightforward and uses convolution to go from one state to the next by using a kernel to calculate the cell neighbors. 
 ```
