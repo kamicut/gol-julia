@@ -4,7 +4,7 @@ using Tk
 using Images
 
 function simulate(size::Int, iter::Int, sparse::Float64=0.1)
-    win = Toplevel("Test", size, size)
+    win = Toplevel("Game of Life", size, size)
     c = Canvas(win)
     pack(c, expand=true, fill="both")
     ctx = getgc(c)
