@@ -22,5 +22,5 @@ We can then check if the cell equals `3`, `11` or `12`. This is because the firs
 - Caching? (a la Hashlife)
 
 ## Inspiration
-[@jiffyclub's IPython Notebook](http://nbviewer.ipython.org/gist/jiffyclub/3778422)
-@thearn's explanations [here](https://github.com/thearn/game-of-life#how-its-written)
+- [@jiffyclub](http://github.com/jiffyclub)'s [IPython Notebook](http://nbviewer.ipython.org/gist/jiffyclub/3778422)
+- [@thearn](http://github.com/thearn)'s explanations [here](https://github.com/thearn/game-of-life#how-its-written)
